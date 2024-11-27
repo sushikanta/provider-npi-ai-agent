@@ -1,0 +1,112 @@
+{
+    "openapi": "3.0.2",
+    "info": {
+        "title": "Provider NPI Validator API",
+        "description": "API to validate Provider by NPI",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "https://us-central1-api-project-896316360064.cloudfunctions.net"
+        }
+    ],
+    "paths": {
+        "/funcValidateNPI": {
+            "get": {
+                "summary": "Get provider details of a Provider NPI",
+                "description": "Returns results count and other details for the specified Provider NPI",
+                "operationId": "HelloHttp.Function",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "npi",
+                        "description": "The NPI of the Provider",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Matching provider count and additional Provider details",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "result_count": {
+                                            "type": "integer",
+                                            "description": "The search result count of the Provider NPI"
+                                        },
+                                        "results": {
+                                            "type": "array",
+                                            "description": "The details of Provider including address and other basic information",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "addresses": {
+                                                        "type": "array",
+                                                        "description": "The address of Provider including country code, country name, address purpose, city, postal code, telephone",
+                                                        "items": {
+                                                            "type": "object",
+                                                            "properties": {
+                                                                "country_code": {
+                                                                    "type": "string",
+                                                                    "description": "The country code of the Provider adress"
+                                                                },
+                                                                "country_name": {
+                                                                    "type": "string",
+                                                                    "description": "The country of the Provider adress"
+                                                                },
+                                                                "city": {
+                                                                    "type": "string",
+                                                                    "description": "The city of the Provider adress"
+                                                                },
+                                                                "telephone_number": {
+                                                                    "type": "string",
+                                                                    "description": "The phone no of the Provider adress"
+                                                                },
+                                                                "postal_code": {
+                                                                    "type": "string",
+                                                                    "description": "The postal code or zip code of the Provider adress"
+                                                                }
+                                                            }
+                                                        }
+                                                    },
+                                                    "basic": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "gender": {
+                                                                "type": "string",
+                                                                "description": "The gender of the Provider"
+                                                            },
+                                                            "certification_date": {
+                                                                "type": "string",
+                                                                "description": "The date of the Provider's certification"
+                                                            },
+                                                            "status": {
+                                                                "type": "string",
+                                                                "description": "The status of the Provider"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request - Invalid query parameter or missing required parameter"
+                    },
+                    "404": {
+                        "description": "Product not found"
+                    }
+                }
+            }
+        }
+    }
+}
