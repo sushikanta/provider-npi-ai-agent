@@ -1,0 +1,165 @@
+{
+	"info": {
+		"_postman_id": "dbcc2e61-7884-4176-b1e8-b2568f769647",
+		"name": "NPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetNPIInfo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://npiregistry.cms.hhs.gov/api/?number=1114541448&first_name=&last_name=&version=2.1",
+					"protocol": "https",
+					"host": [
+						"npiregistry",
+						"cms",
+						"hhs",
+						"gov"
+					],
+					"path": [
+						"api",
+						""
+					],
+					"query": [
+						{
+							"key": "number",
+							"value": "1114541448"
+						},
+						{
+							"key": "first_name",
+							"value": ""
+						},
+						{
+							"key": "last_name",
+							"value": ""
+						},
+						{
+							"key": "version",
+							"value": "2.1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://gateway.optum.com/auth/oauth2/cached/token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "mo774DDQUqExd6plND9XsEErXD7PDTxR",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "uqT30z35FT0XQJDVaKe59DDayWIsJ5cJ",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://gateway.optum.com/auth/oauth2/cached/token",
+					"protocol": "https",
+					"host": [
+						"gateway",
+						"optum",
+						"com"
+					],
+					"path": [
+						"auth",
+						"oauth2",
+						"cached",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://gateway.optum.com/api/pdr/pasplmi/v1/delegates-tins",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiJweFlGY2FXdTVLYVh6bWN1LUc5eUl0SlJIS1FWWlNUUEhWbzhaNmdWT0VrIiwidHlwIjoiSldUIiwiYWxnIjoiUlMyNTYifQ.eyJhdWQiOiJodHRwczovL2FwaS51aGcuY29tIiwic3ViIjoidXFUMzB6MzVGVDBYUUpEVmFLZTU5RERheVdJc0o1Y0oiLCJhenAiOiJ1cVQzMHozNUZUMFhRSkRWYUtlNTlERGF5V0lzSjVjSiIsInNjb3BlIjoiaHR0cHM6Ly9hcGkudWhnLmNvbS8uZGVmYXVsdCIsImlzcyI6Imh0dHBzOi8vaWRlbnRpdHkudWhnLmNvbSIsInR5cCI6IkJlYXJlciIsIm9pZCI6InVxVDMwejM1RlQwWFFKRFZhS2U1OUREYXlXSXNKNWNKIiwiZXhwIjoxNzMyNzg3MDIxLCJpYXQiOjE3MzI3ODM0MjEsImp0aSI6IjNjN2QxYTMzLTQ3NDYtNGRmMi1hZWUwLWUxNTM3NzVlOGFjMCJ9.fAATtPXaj3-YTdQ-ktWGFyjd3zPOksvKz5R63lL3z4f07lxW_x3UnXHZfF0pcKLSB7EabmXo0Lq6o_uOs0OrF8Cuz0Knns_cjpvbXs3MYUDh0jEXW36ajK2tYeqrVPoOYk0stDrBIEhDUDy_0HTAMMjWHHpcP4P-vYRD2GizfyyPLXqZ8SsKArkICmogboYLD9QOaPP-2ulfZ3xIRkv1sBJnOwoJ7TclESmRjijzzMOX90FkM3CSVNHx2Ub4CfdnLC8Z9BvXWBaCkC_6ik4ccBB26n-TusWpGopw4Cf8sBiKPr7clS1qQhwrPrQYsMuxFjsVVrCHiNuCoDyfOGqzdA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://gateway.optum.com/api/pdr/pasplmi/v1/delegates-tins",
+					"protocol": "https",
+					"host": [
+						"gateway",
+						"optum",
+						"com"
+					],
+					"path": [
+						"api",
+						"pdr",
+						"pasplmi",
+						"v1",
+						"delegates-tins"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://plmi.uhc.com/api/Delegates/TIN?TIN=941156581",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiJweFlGY2FXdTVLYVh6bWN1LUc5eUl0SlJIS1FWWlNUUEhWbzhaNmdWT0VrIiwidHlwIjoiSldUIiwiYWxnIjoiUlMyNTYifQ.eyJhdWQiOiJodHRwczovL2FwaS51aGcuY29tIiwic3ViIjoidXFUMzB6MzVGVDBYUUpEVmFLZTU5RERheVdJc0o1Y0oiLCJhenAiOiJ1cVQzMHozNUZUMFhRSkRWYUtlNTlERGF5V0lzSjVjSiIsInNjb3BlIjoiaHR0cHM6Ly9hcGkudWhnLmNvbS8uZGVmYXVsdCIsImlzcyI6Imh0dHBzOi8vaWRlbnRpdHkudWhnLmNvbSIsInR5cCI6IkJlYXJlciIsIm9pZCI6InVxVDMwejM1RlQwWFFKRFZhS2U1OUREYXlXSXNKNWNKIiwiZXhwIjoxNzMyNzg3MDIxLCJpYXQiOjE3MzI3ODM0MjEsImp0aSI6IjNjN2QxYTMzLTQ3NDYtNGRmMi1hZWUwLWUxNTM3NzVlOGFjMCJ9.fAATtPXaj3-YTdQ-ktWGFyjd3zPOksvKz5R63lL3z4f07lxW_x3UnXHZfF0pcKLSB7EabmXo0Lq6o_uOs0OrF8Cuz0Knns_cjpvbXs3MYUDh0jEXW36ajK2tYeqrVPoOYk0stDrBIEhDUDy_0HTAMMjWHHpcP4P-vYRD2GizfyyPLXqZ8SsKArkICmogboYLD9QOaPP-2ulfZ3xIRkv1sBJnOwoJ7TclESmRjijzzMOX90FkM3CSVNHx2Ub4CfdnLC8Z9BvXWBaCkC_6ik4ccBB26n-TusWpGopw4Cf8sBiKPr7clS1qQhwrPrQYsMuxFjsVVrCHiNuCoDyfOGqzdA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://plmi.uhc.com/api/Delegates/TIN?TIN=941156581",
+					"protocol": "https",
+					"host": [
+						"plmi",
+						"uhc",
+						"com"
+					],
+					"path": [
+						"api",
+						"Delegates",
+						"TIN"
+					],
+					"query": [
+						{
+							"key": "TIN",
+							"value": "941156581"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
