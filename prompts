@@ -1,0 +1,7 @@
+Attached excel contains - 
+1. Sheet NDB_Teams - Teams table data containing mapping of Team & Id
+2. Sheet NDB_TransactionTypes - TransactionTypes table data containing mapping of TransactionType & Id 
+3. Sheet NDB_Rules - Rules table data containing mapping of RuleName with Id
+4. Sheet Mappings - Contains mapping of Teams, Transaction Type and Rule Names 
+
+Prepare an full sql script for based on the mapping for the table - NDB_TeamTransactionRulesMapping with columns NDB_TeamId, NDB_TransactionTypeId, NDB_RuleId
